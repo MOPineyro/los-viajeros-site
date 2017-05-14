@@ -3,14 +3,57 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Los Viajeros Food Truck - NYC - Latin Fusion">
+    <meta name="keywords" content="food truck, tacos, burritos, latin, nyc food truck, brooklyn food truck, bronx food truck">
     <!-- Use the title from a page's frontmatter if it has one -->
-    <title><%= current_page.data.title || "Middleman" %></title>
-    <%= stylesheet_link_tag "site" %>
+    <title><%= current_page.data.title || "Los Viajeros Food Truck" %></title>
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Bootstrap  -->
+    <%= stylesheet_link_tag "bootstrap" %>
+    <!-- Theme Style -->
+    <%= stylesheet_link_tag "style" %>
+    <!-- Responsive -->
+    <%= stylesheet_link_tag "responsive" %>
+    <%= stylesheet_link_tag "jquery.datetimepicker" %>
+    <!-- Colors -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/colors/color1.css" id="colors"> -->
+    <!-- Animation Style -->
+    <%= stylesheet_link_tag "animate" %>
+    <!-- Favicon and touch icons  -->
+    <link href="icon/apple-touch-icon-48-precomposed.png" rel="apple-touch-icon" sizes="48x48">
+    <link href="icon/apple-touch-icon-32-precomposed.png" rel="apple-touch-icon-precomposed">
+    <link href="icon/favicon.png" rel="shortcut icon">
+
     <%= javascript_include_tag "site" %>
   </head>
   <body>
     <%= yield %>
+    <%= javascript_include_tag "jquery.min" %>
+    <%= javascript_include_tag "jquery.datetimepicker.full.min" %>
+    <%= javascript_include_tag "bootstrap.min" %>
+    <%= javascript_include_tag "jquery.easing" %>
+    <%= javascript_include_tag "imagesloaded.min" %>
+    <%= javascript_include_tag "jquery.isotope.min" %>
+    <%= javascript_include_tag "jquery-waypoints" %>
+
+    <%= javascript_include_tag "jquery.magnific-popup.min" %>
+    <%= javascript_include_tag "jquery.cookie" %>
+    <%= javascript_include_tag "parallax" %>
+    <%= javascript_include_tag "smoothscroll" %>
+    <%= javascript_include_tag "jquery.flexslider-min" %>
+    <%= javascript_include_tag "owl.carousel" %>
+    <%= javascript_include_tag "jquery-validate" %>
+    <%= javascript_include_tag "jquery.fancybox" %>
+    <%= javascript_include_tag "countdown" %>
+    <%= javascript_include_tag "main" %>
+
+    <%= javascript_include_tag "jquery.themepunch.tools.min" %>
+    <%= javascript_include_tag "jquery.themepunch.revolution.min" %>
+    <%= javascript_include_tag "slider" %>
+
   </body>
 </html>
