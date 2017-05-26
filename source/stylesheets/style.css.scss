@@ -64,6 +64,14 @@ $color_orange: rgb(255, 120, 0);
   background-color: $color_orange;
 }
 
+.flat-alert {
+  background-color: $color_pink;
+  color: white !important;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px;
+}
+
 /* Reset
 -------------------------------------------------------------- */
   html {
@@ -1589,7 +1597,7 @@ input[type="color"],
 /* Footer
 -------------------------------------------------------------- */
 .footer {
-   padding-top: 86px ;
+   padding-top: 0px ;
 }
 
 .footer .footer-widgets .widget .widget-title {
@@ -1628,6 +1636,19 @@ input[type="color"],
 .footer .footer-widgets .widget .footer-info li.phone:before {
   content: "\f095";
 }
+
+.footer .footer-widgets .widget .footer-info li.twitter:before {
+  content: "\f099";
+}
+
+.footer .footer-widgets .widget .footer-info li.facebook:before {
+  content: "\f230";
+}
+
+.footer .footer-widgets .widget .footer-info li.instagram:before {
+  content: "\f16d";
+}
+
 .widget.widget_recent_posts ul {
   margin-top: 29px;
 }

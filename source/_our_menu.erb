@@ -4,206 +4,238 @@
         <div class="row">
             <div class="col-md-12 flat-tabs ">
                 <%= image_tag 'tabmenu/1_bottom.png'  %>
-                <div class="bg-tabs">
+                <div class="bg-tabs" id="menu">
                     <div class="title-section style1 martp-0px">
                         <h1 class="title marbt-33px" >Our Menu</h1>
                     </div>
                     
                     <ul class="menu-tab">
-                        <li class="active"><a href="#">All</a></li>
-                        <li><a href="#">Tacos </a></li>
-                        <li><a href="#">Burritos </a></li>
-                        <li><a href="#">Nachos  </a></li>
-                        <li><a href="#">Other  </a></li>
+                        <li class="active"><a href="#">Tacos   </a></li>
+                        <li><a href="#">Burritos   </a></li>
+                        <li><a href="#">Quesadillas   </a></li>
+                        <li><a href="#">Sides   </a></li>
                     </ul>
                     
                     </div><!--/.bg-tabs-->
-                    <div class="content-tab">
-                        <div class="content-inner">
+                <div class="content-tab">
+                    <div class="content-inner">
+                        <div class="col-md-6">
+                            <ul class="menu-fd">
+                                <% data.taco_menu.each_with_index do |item, index| %>
+                                    <% if index < 3 %>
+                                    <li>
+                                        <div class="media-wrap">
+                                            <a href="#" class="pull-left">
+                                                <%= image_tag "tabmenu/tacos/#{item["image-name"]}.jpeg", :alt => "#{item["image-name"]}", :class => "img-responsive", :width => 100, :height => 100 %>
+                                            </a>
+                                            <div class="media-body">
+                                                <h6><%= item["item"] %></h6>
+                                                <span>$<%= item["price"] %></span>
+                                            </div>
+                                            <ul class="menu-in">
+                                            <% item["ingredients"].split(",").each do |ingredient| %>
+                                                <li><%= ingredient %></li>
+                                            <% end %>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <% end %>
+                                <% end %>
+                            </ul>
+                        </div><!-- /.col-md-6" -->
+                        <% data.taco_menu.each_with_index do |item, index| %>
+                            <% if index >= 3 && index < 6 %>
                             <div class="col-md-6">
                                 <ul class="menu-fd">
-                                    <li>
-                                        <div class="media-wrap">
-                                            <a href="#" class="pull-left">
-                                                <img src="images/menufood/1.png" alt="client" class="img-responsive">
-                                            </a>
-                                            <div class="media-body">
-                                                <h6><a href="#">ITALIAN SOURCE MUSHROOM</a></h6>
-                                                <span>$19.9</span>
+                                        
+                                        <li>
+                                            <div class="media-wrap">
+                                                <a href="#" class="pull-left">
+                                                    <%= image_tag "tabmenu/tacos/#{item["image-name"]}.jpeg", :alt => "#{item["image-name"]}", :class => "img-responsive", :width => 100, :height => 100 %>
+                                                </a>
+                                                <div class="media-body">
+                                                    <h6><%= item["item"] %></h6>
+                                                    <span>$<%= item["price"] %></span>
+                                                </div>
+                                                <ul class="menu-in">
+                                                <% item["ingredients"].split(",").each do |ingredient| %>
+                                                    <li><%= ingredient %></li>
+                                                <% end %>
+                                                </ul>
                                             </div>
-                                            <ul class="menu-in">
-                                                <li>Mushroom</li>
-                                                <li>Garlic </li>
-                                                <li>Veggies</li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media-wrap">
-                                            <a href="#" class="pull-left">
-                                                <img src="images/menufood/2.png" alt="client" class="img-responsive">
-                                            </a>
-                                            <div class="media-body">
-                                                <h6><a href="#">TUNA ROAST SOURCE</a></h6>
-                                                <span>$19.9</span>
-                                            </div>
-                                            <ul class="menu-in">
-                                                <li>Tuna</li>
-                                                <li>Potatoes  </li>
-                                                <li>Garlic</li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media-wrap">
-                                            <a href="#" class="pull-left">
-                                                <img src="images/menufood/3.png" alt="client" class="img-responsive">
-                                            </a>
-                                            <div class="media-body">
-                                                <h6><a href="#">FRIED POTATOES WITH GARLIC</a></h6>
-                                                <span>$19.9</span>
-                                            </div>
-                                            <ul class="menu-in">
-                                                <li>Potatoes</li>
-                                                <li>Olive Oil </li>
-                                                <li>Rice</li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media-wrap">
-                                            <a href="#" class="pull-left">
-                                                <img src="images/menufood/4.png" alt="client" class="img-responsive">
-                                            </a>
-                                            <div class="media-body">
-                                                <h6><a href="#">ROAST PORK (4 STICKS)</a></h6>
-                                                <span>$19.9</span>
-                                            </div>
-                                            <ul class="menu-in">
-                                                <li>Pork </li>
-                                                <li>Veggies   </li>
-                                                <li>Shoyu</li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media-wrap">
-                                            <a href="#" class="pull-left">
-                                                <img src="images/menufood/5.png" alt="client" class="img-responsive">
-                                            </a>
-                                            <div class="media-body">
-                                                <h6><a href="#">SALTED FRIED CHICKEN</a></h6>
-                                                
-                                                <span>$19.9</span>
-                                            </div>
-                                            <ul class="menu-in">
-                                                <li>Chicken</li>
-                                                <li>Olive Oil </li>
-                                                <li>Salt</li>
-                                            </ul>
-                                        </div>
-                                    </li>
+                                        </li>
                                 </ul>
-                                </div><!-- /.col-md-6" -->
-                                
-                                <div class="col-md-6">
-                                    <ul class="menu-fd">
+                            </div><!-- /.col-md-6" -->
+                            <% end %>
+                        <% end %>
+                </div><!-- /.content-inner -->           
+                <div class="content-inner">
+                        <div class="col-md-6">
+                            <ul class="menu-fd">
+                                <% data.burrito_menu.each_with_index do |item, index| %>
+                                    <% if index < 3 %>
+                                    <li>
+                                        <div class="media-wrap">
+                                            <a href="#" class="pull-left">
+                                                <%= image_tag "tabmenu/burritos/burrito.jpeg", :alt => "#{item["image-name"]}", :class => "img-responsive", :width => 100, :height => 100 %>
+                                            </a>
+                                            <div class="media-body">
+                                                <h6><%= item["item"] %></h6>
+                                                <span>$<%= item["price"] %></span>
+                                            </div>
+                                            <ul class="menu-in">
+                                            <% item["ingredients"].split(",").each do |ingredient| %>
+                                                <li><%= ingredient %></li>
+                                            <% end %>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <% end %>
+                                <% end %>
+                            </ul>
+                        </div><!-- /.col-md-6" -->
+                        <% data.burrito_menu.each_with_index do |item, index| %>
+                            <% if index >= 3 && index < 6 %>
+                            <div class="col-md-6">
+                                <ul class="menu-fd">
+                                        
                                         <li>
                                             <div class="media-wrap">
                                                 <a href="#" class="pull-left">
-                                                    <img src="images/menufood/6.png" alt="client" class="img-responsive">
+                                                    <%= image_tag "tabmenu/burritos/burrito.jpeg", :alt => "#{item["image-name"]}", :class => "img-responsive", :width => 100, :height => 100 %>
                                                 </a>
                                                 <div class="media-body">
-                                                    <h6><a href="#">CRAB WITH CURRY SOURCES</a></h6>
-                                                    <span>$19.9</span>
+                                                    <h6><%= item["item"] %></h6>
+                                                    <span>$<%= item["price"] %></span>
                                                 </div>
                                                 <ul class="menu-in">
-                                                    <li>Crab  </li>
-                                                    <li>Potatoes  </li>
-                                                    <li>Veggies</li>
+                                                <% item["ingredients"].split(",").each do |ingredient| %>
+                                                    <li><%= ingredient %></li>
+                                                <% end %>
                                                 </ul>
                                             </div>
                                         </li>
+                                </ul>
+                            </div><!-- /.col-md-6" -->
+                            <% end %>
+                        <% end %>
+                </div><!-- /.content-inner -->
+                <div class="content-inner">
+                        <div class="col-md-6">
+                            <ul class="menu-fd">
+                                <% data.quesadilla_menu.each_with_index do |item, index| %>
+                                    <% if index < 2 %>
+                                    <li>
+                                        <div class="media-wrap">
+                                            <a href="#" class="pull-left">
+                                                <%= image_tag "tabmenu/quesadillas/quesadilla.jpeg", :alt => "#{item["image-name"]}", :class => "img-responsive", :width => 100, :height => 100 %>
+                                            </a>
+                                            <div class="media-body">
+                                                <h6><%= item["item"] %></h6>
+                                                <span>$<%= item["price"] %></span>
+                                            </div>
+                                            <ul class="menu-in">
+                                            <% unless item["ingredients"].empty? %>
+                                                <% item["ingredients"].split(",").each do |ingredient| %>
+                                                    <li><%= ingredient %></li>
+                                                <% end %>
+                                            <% end %>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <% end %>
+                                <% end %>
+                            </ul>
+                        </div><!-- /.col-md-6" -->
+                        <% data.quesadilla_menu.each_with_index do |item, index| %>
+                            <% if index >= 2 && index < 4 %>
+                            <div class="col-md-6">
+                                <ul class="menu-fd">
+                                        
                                         <li>
                                             <div class="media-wrap">
                                                 <a href="#" class="pull-left">
-                                                    <img src="images/menufood/7.png" alt="client" class="img-responsive">
+                                                    <%= image_tag "tabmenu/quesadillas/quesadilla.jpeg", :alt => "#{item["image-name"]}", :class => "img-responsive", :width => 100, :height => 100 %>
                                                 </a>
                                                 <div class="media-body">
-                                                    <h6><a href="#">IMPORTED SALMON STEAK</a></h6>
-                                                    <span>$19.9</span>
+                                                    <h6><%= item["item"] %></h6>
+                                                    <span>$<%= item["price"] %></span>
                                                 </div>
                                                 <ul class="menu-in">
-                                                    <li>Salmon </li>
-                                                    <li>Veggies    </li>
-                                                    <li>Oil</li>
+                                                <% item["ingredients"].split(",").each do |ingredient| %>
+                                                    <li><%= ingredient %></li>
+                                                <% end %>
                                                 </ul>
                                             </div>
                                         </li>
+                                </ul>
+                            </div><!-- /.col-md-6" -->
+                            <% end %>
+                        <% end %>
+                </div><!-- /.content-inner -->
+                <div class="content-inner">
+                        <div class="col-md-6">
+                            <ul class="menu-fd">
+                                <% data.side_menu.each_with_index do |item, index| %>
+                                    <% if index < 2 %>
+                                    <li>
+                                        <div class="media-wrap">
+                                            <a href="#" class="pull-left">
+                                                <%= image_tag "tabmenu/sides/#{item["image-name"]}.jpeg", :alt => "#{item["image-name"]}", :class => "img-responsive", :width => 100, :height => 100 %>
+                                            </a>
+                                            <div class="media-body">
+                                                <h6><%= item["item"] %></h6>
+                                                <span>$<%= item["price"] %></span>
+                                            </div>
+                                            <ul class="menu-in">
+                                            <% unless item["ingredients"].empty? %>
+                                                <% item["ingredients"].split(",").each do |ingredient| %>
+                                                    <li><%= ingredient %></li>
+                                                <% end %>
+                                            <% end %>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <% end %>
+                                <% end %>
+                            </ul>
+                        </div><!-- /.col-md-6" -->
+                        <% data.side_menu.each_with_index do |item, index| %>
+                            <% if index >= 2 && index < 4 %>
+                            <div class="col-md-6">
+                                <ul class="menu-fd">
+                                        
                                         <li>
                                             <div class="media-wrap">
                                                 <a href="#" class="pull-left">
-                                                    <img src="images/menufood/8.png" alt="client" class="img-responsive">
+                                                    <%= image_tag "tabmenu/sides/#{item["image-name"]}.jpeg", :alt => "#{item["image-name"]}", :class => "img-responsive", :width => 100, :height => 100 %>
                                                 </a>
                                                 <div class="media-body">
-                                                    <h6><a href="#">BAKED POTATO PIZZA</a></h6>
-                                                    <span>$19.9</span>
+                                                    <h6><%= item["item"] %></h6>
+                                                    <span>$<%= item["price"] %></span>
                                                 </div>
                                                 <ul class="menu-in">
-                                                    <li>Potato </li>
-                                                    <li>Bread   </li>
-                                                    <li>Cheese</li>
+                                                    <% unless item["ingredients"].empty? %>
+                                                        <% item["ingredients"].split(",").each do |ingredient| %>
+                                                            <li><%= ingredient %></li>
+                                                        <% end %>
+                                                    <% end %>
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="media-wrap">
-                                                <a href="#" class="pull-left">
-                                                    <img src="images/menufood/9.png" alt="client" class="img-responsive">
-                                                </a>
-                                                <div class="media-body">
-                                                    <h6><a href="#">PORK WITH ITALIAN SALSA VERDE</a></h6>
-                                                    <span>$19.9</span>
-                                                </div>
-                                                <ul class="menu-in">
-                                                    <li>Pork </li>
-                                                    <li>Tomatoes</li>
-                                                    <li>Veggies</li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media-wrap">
-                                                <a href="#" class="pull-left">
-                                                    <img src="images/menufood/10.png" alt="client" class="img-responsive">
-                                                </a>
-                                                <div class="media-body">
-                                                    <h6><a href="#">FRESH CRAB WITH LEMON</a></h6>
-                                                    
-                                                    <span>$19.9</span>
-                                                </div>
-                                                <ul class="menu-in">
-                                                    <li>Crab</li>
-                                                    <li>Lemon  </li>
-                                                    <li>Garlic</li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    </div><!-- /.col-md-6" -->
-                            <div class="clearfix"></div>
-                            <div class="flat-divider d35px"></div>
-                            <div class="read-more view-all">
-                                <a href="#">Order Online</a>
-                            </div>
-                        </div><!-- /.content-inner -->
-                                    
-                    <div class="content-inner">
-                        <p>Tacos</p>
-                    </div>
-                                    <!-- /.content-inner -->
-                </div><!-- /.content-tab -->
-            </div><!--flat-tabs-->
+                                </ul>
+                            </div><!-- /.col-md-6" -->
+                            <% end %>
+                        <% end %>
+                </div><!-- /.content-inner -->
+
+            </div><!-- /.content-tab -->
+        </div><!--flat-tabs-->
+        <div class="clearfix"></div>
+        <div class="flat-divider d35px"></div>
+        <div class="read-more view-all">
+            <a href="https://squareup.com/store/los-viajeros-food-trucks/">Order Online</a>
+        </div>
                                         
         </div><!--row-->
     </div><!--container -->

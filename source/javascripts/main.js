@@ -138,19 +138,20 @@
                 submitHandler: function( form ) {
                     var $form = $(form),
                         str = $form.serialize(),
-                        loading = $('<div />', { 'class': 'loading' });
-
+                        // loading = $('<div />', { 'class': 'loading' });
+                        loader = "<section class='loading-overlay'><div class='Loading-Page'><h2 class='loader'>Loading</h2></div></section>"
                     $.ajax({
                         type: "POST",
-                        url:  $form.attr('action'),
+                        url:  "https://wt-manuel_o_pineyro-gmail_com-0.run.webtask.io/losviajeros-contact?" + str,
                         data: str,
                         beforeSend: function () {
-                            $form.find('.form-submit').append(loading);
+                            $('.submit-form').append(loader);
                         },
                         success: function( msg ) {
-                            var result, cls;                            
+                            var result, cls;
+                            console.log(msg);                            
                             if ( msg == 'Success' ) {                                
-                                result = 'Message Sent Successfully To Email Administrator. ( You can change the email management a very easy way to get the message of customers in the user manual )';
+                                result = "Message Sent Successfully. We'll be in touch soon." ;
                                 cls = 'msg-success';
                             } else {
                                 result = 'Error sending email.';
@@ -162,14 +163,14 @@
                                     'class': 'flat-alert ' + cls,
                                     'text' : result
                                 }).append(
-                                    $('<a class="close" href="#"><i class="fa fa-close"></i></a>')
+                                    $('<a class="close" href=""><i class="fa fa-close"></i></a>')
                                 )
                             );
 
                             $form.find(':input').not('.submit').val('');
                         },
                         complete: function (xhr, status, error_thrown) {
-                            $form.find('.loading').remove();
+                            removePreloader()
                         }
                     });
                 }
@@ -179,6 +180,7 @@
 
     var alertBox = function() {
         $(document).on('click', '.close', function(e) {
+            console.log("click")
             $(this).closest('.flat-alert').remove();
             e.preventDefault();
         })     
@@ -833,6 +835,7 @@
         productSlide();
         tabs();
         ajaxContactForm();
+        alertBox();
         portfolioIsotope();
         flatServicesCarousel();
         flatAccordion();
