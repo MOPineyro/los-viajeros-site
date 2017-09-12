@@ -1,7 +1,27 @@
-[
-    {"day":"Monday/Friday","time":"Truck is Closed","location":"(Available for Catering)"},
-    {"day":"Tuesday","time":"11:30 am to 2:30 pm","location":"Flatiron District NYC, 5th Ave and 16th St"},
-    {"day":"Wednesday","time":"11:30 am to 2:30 pm","location":"Jacobi Medical Center, Bronx NY, 1400 Pelham Pkwy"},
-    {"day":"Thursday","time":"11:30 am to 2:30 pm","location":"DUMBO Lot Brooklyn, 56 Jay St"},
-    {"day":"Saturday & Sunday","time":"3:00 pm to 11:00 pm","location":"La Marina, 348 Dyckman"}
+[  
+   {  
+      "location":"(Available for Catering)",
+      "day":"Monday/Friday",
+      "time":"Truck is Closed"
+   },
+   {  
+      "location":"Flatiron District NYC, 5th Ave and 16th St",
+      "day":"Tuesday",
+      "time":"11:30 am to 2:30 pm"
+   },
+   {  
+      "location":"Jacobi Medical Center, Bronx NY, 1400 Pelham Pkwy",
+      "day":"Wednesday",
+      "time":"11:30 am to 2:30 pm"
+   },
+   {  
+      "location":"DUMBO Lot Brooklyn, 56 Jay St",
+      "day":"Thursday",
+      "time":"11:30 am to 2:30 pm"
+   },
+   {  
+      "location":"(Available for Catering)",
+      "day":"Saturday & Sunday",
+      "time":"Truck is Closed"
+   }
 ]

@@ -72,6 +72,17 @@ $color_orange: rgb(255, 120, 0);
   padding: 10px;
 }
 
+.latest-news {
+  background-color: $color_pink;
+  color: white !important;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.img-thumbnail {
+  margin-bottom:7px;
+}
+
 /* Reset
 -------------------------------------------------------------- */
   html {
