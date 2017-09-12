@@ -1,32 +1,34 @@
+<!-- Flat client  -->
 <section class="flat-row flat-clients s1">
     <div class="container">
-        <div class="title-section">
-            <h1 class="title">Latest Updates</h1>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="title-section">
+                    <h1 class="title">LATEST UPDATES</h1>
+                </div>
+                <br>
+                <!-- Updates Section - 4-5 items -->
+                <% data.news.each do |item| %>
+                <div class="media-wrap">
+                    <a href="#{item["Image"].first.url}" class="pull-left">
+                        <%= image_tag "#{item["Image"].first.thumbnails.large.url}", :alt => "img", :class => "media-object", :width => 64, :height => 64, :style => "padding-right: 20px;"%>
+                    </a>
+                    <div class="media-body">
+                        <h6><%= item["Title"] %></h6>
+                        <%= item["Description"] %>
+                        <br>
+                        <% unless item["Link"].nil? %>
+                            <a href="<%= item["Link"] %>"><span>SEE MORE HERE ></span></a>
+                        <% end %>
+                    </div>
+                </div>
+                <br>
+                <% end %>
+            </div>
+            <div class="col-md-4">
+                <iframe src="https://snapwidget.com/embed/437802" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; "></iframe>
+            </div>
         </div>
-        <div class="flat-client flat-alert msg-success" data-item="1" data-nav="false" data-dots="false" data-auto="false" data-margin="">
-            <div class="item"> 
-                    <%= image_tag 'news/1.png', :alt => 'images', :height => "100px", :width => "100px" %> 
-            </div>
-            <div class="item"> 
-                <%= image_tag 'news/2.png', :alt => 'images', :height => "100px", :width => "100px" %> 
-            </div>
 
-            <div class="item"> 
-                <%= image_tag 'news/3.png', :alt => 'images', :height => "100px", :width => "100px" %> 
-            </div> 
-
-            <div class="item"> 
-                <%= image_tag 'news/4.png', :alt => 'images', :height => "100px", :width => "100px" %> 
-            </div>
-
-            <div class="item">
-                <%= image_tag 'news/5.png', :alt => 'images', :height => "100px", :width => "100px" %> 
-            </div>
-
-            <div class="item">
-                <%= image_tag 'news/6.png', :alt => 'images', :height => "100px", :width => "100px" %> 
-            </div>
-
-        </div><!-- /.flat-client -->       
     </div>      
 </section> 
