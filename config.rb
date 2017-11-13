@@ -44,7 +44,21 @@ page '/*.txt', layout: false
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
-# configure :build do
-#   activate :minify_css
-#   activate :minify_javascript
-# end
+configure :build do
+  activate :minify_css
+  activate :minify_javascript
+end
+
+activate :s3_sync do |s3_sync|
+  s3_sync.bucket                     = 'aws-website-losviajerosfoodtruck-bx0kd' # The name of the S3 bucket you are targetting. This is globally unique.
+  s3_sync.region                     = 'us-west-2'     # The AWS region for your bucket.
+  s3_sync.aws_access_key_id          = 'AKIAINEREQVNQT72LUUA'
+  s3_sync.aws_secret_access_key      = 'wAXSwpEB6YltrWuDdwgs/sTvT296pE7zLvFMxG8O'
+  s3_sync.delete                     = false # We delete stray files by default.
+  s3_sync.after_build                = false # We chain after the build step by default. This may not be your desired behavior…
+  s3_sync.prefer_gzip                = true
+  s3_sync.path_style                 = true
+  s3_sync.reduced_redundancy_storage = false
+  s3_sync.acl                        = 'public-read'
+  s3_sync.encryption                 = false
+end
