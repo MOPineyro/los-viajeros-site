@@ -8,10 +8,11 @@
                 </div>
                 <br>
                 <!-- Updates Section - 4-5 items -->
-                <% data.news.each do |item| %>
+                <% sorted_data = data.news.sort_by { |h| h['order'].to_i } %>
+                <% sorted_data.each do |item| %>
                 <div class="media-wrap">
-                    <a href="#{item["Image"].first.url}" class="pull-left">
-                        <%= image_tag "#{item["Image"].first.thumbnails.large.url}", :alt => "img", :class => "media-object", :width => 64, :height => 64, :style => "padding-right: 20px;"%>
+                    <a href="<%= item["Link"] %>" class="pull-left">
+                        <%= image_tag "#{item['Image'].first.thumbnails.large.url}", :alt => "img", :class => "media-object", :width => 64, :height => 64, :style => "padding-right: 20px;" %>
                     </a>
                     <div class="media-body">
                         <h6><%= item["Title"] %></h6>

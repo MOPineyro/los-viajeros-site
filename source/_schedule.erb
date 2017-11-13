@@ -4,7 +4,8 @@
       <th>Time</th>
       <th>Location</th>
   </tr>
-  <% data.schedule.each do |day| %>
+  <% sorted_data = data.schedule.sort_by { |h| h['order'].to_i } %>
+  <% sorted_data.each do |day| %>
     <tr>
         <td><%= day["day"] %></td>
         <td><%= day["time"] %></td>

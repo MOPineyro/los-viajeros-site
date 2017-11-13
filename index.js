@@ -9,6 +9,7 @@ var fileNews = 'data/news.json';
 var menuJson = [];
 var menuJsonTest = [];
 var scheduleJson = [];
+var newsJson = [];
 
 Airtable.configure({
     endpointUrl: 'https://api.airtable.com',
@@ -90,24 +91,7 @@ var base = Airtable.base('appZS57k7B6rp8Cny');
 //     console.log('Success!');
 // });
 
-// base('Schedule').select({
-// }).eachPage(function page(records, fetchNextPage) {
-//     // This function (`page`) will get called for each page of records.
-//     records.forEach(function(record) {
-//         scheduleJson.push(record._rawJson.fields);
-//     });
-//     fetchNextPage();
-// }, function done(error) {
-//     if (error) {
-//         console.log(error);
-//     }
-//     jsonfile.writeFile(fileSched, scheduleJson, function(err) {
-//         console.error(err)
-//     });
-//     console.log('Success!');
-// });
-
-base('News').select({
+base('Schedule').select({
 }).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
     records.forEach(function(record) {
@@ -118,8 +102,25 @@ base('News').select({
     if (error) {
         console.log(error);
     }
-    jsonfile.writeFile(fileNews, scheduleJson, function(err) {
+    jsonfile.writeFile(fileSched, scheduleJson, function(err) {
         console.error(err)
     });
-    console.log('Success!');
+    console.log('Schedule - Success!');
+});
+
+base('News').select({
+}).eachPage(function page(records, fetchNextPage) {
+    // This function (`page`) will get called for each page of records.
+    records.forEach(function(record) {
+        newsJson.push(record._rawJson.fields);
+    });
+    fetchNextPage();
+}, function done(error) {
+    if (error) {
+        console.log(error);
+    }
+    jsonfile.writeFile(fileNews, newsJson, function(err) {
+        console.error(err)
+    });
+    console.log('News - Success!');
 });
