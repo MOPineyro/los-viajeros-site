@@ -1,12 +1,26 @@
-dependencies:
-  pre:
-    - bundle install
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
 
-deployment:
-  production:
-    branch: master
-    commands:
-      # Middleman build
-      - bundle exec middleman build --verbose
-      # Upload data to AWS S3 (See gem 'middleman-s3_sync')
-      - bundle exec middleman s3_sync
+    # Restore bundle cache
+      - restore_cache:
+          key: rbuncle-cache-{{ checksum "Gemfile.lock" }}
+
+      # Bundle install dependencies
+      - run: bundle install --path vendor/bundle
+
+      # Store bundle cache
+      - save_cache:
+          key: bundle-cache-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - run:
+          name: deploy to s3
+          command: |
+            bundle exec middleman build --clean --verbose
+            bundle exec middleman s3_sync
+
