@@ -8,7 +8,7 @@ jobs:
 
     # Restore bundle cache
       - restore_cache:
-          key: rbuncle-cache-{{ checksum "Gemfile.lock" }}
+          key: bundle-cache-{{ checksum "Gemfile.lock" }}
 
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
