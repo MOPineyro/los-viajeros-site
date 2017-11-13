@@ -1,8 +1,8 @@
 [  
    {  
-      "location":"(Available for Catering)",
-      "day":"Monday/Friday",
-      "time":"Truck is Closed"
+      "location":"5th Ave. & 20th St. NYC",
+      "day":"Monday",
+      "time":"11:30 am to 2:30 pm"
    },
    {  
       "location":"Flatiron District NYC, 5th Ave and 16th St",
@@ -21,7 +21,7 @@
    },
    {  
       "location":"(Available for Catering)",
-      "day":"Saturday & Sunday",
-      "time":"Truck is Closed"
+      "day":"Friday",
+      "time":"Open"
    }
 ]
