@@ -7,4 +7,5 @@ gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw]
 gem "middleman-livereload", "~> 3.4.3"
 gem 'mime-types'
 gem "middleman-s3_sync"
+gem 'middleman-dotenv', '~> 2.0'
 # gem "middleman-dato"
