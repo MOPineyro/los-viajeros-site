@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.4.1
+      - image: circleci/ruby:2.4.1-node
     steps:
       - checkout
 
@@ -22,6 +22,7 @@ jobs:
       - run:
           name: deploy to s3
           command: |
+            node index.js
             bundle exec middleman build --clean --verbose
             bundle exec middleman s3_sync
 
