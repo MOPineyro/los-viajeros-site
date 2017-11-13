@@ -8,4 +8,5 @@ gem "middleman-livereload", "~> 3.4.3"
 gem 'mime-types'
 gem "middleman-s3_sync"
 gem 'middleman-dotenv', '~> 2.0'
+gem 'middleman-google-analytics', '~> 3.0'
 # gem "middleman-dato"

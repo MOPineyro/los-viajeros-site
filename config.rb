@@ -60,3 +60,7 @@ activate :s3_sync do |s3_sync|
   s3_sync.acl                        = 'public-read'
   s3_sync.encryption                 = false
 end
+
+activate :google_analytics do |ga|
+  ga.tracking_id = 'UA-109593637-1' # Replace with your property ID.
+end
