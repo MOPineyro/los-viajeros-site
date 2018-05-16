@@ -13,7 +13,7 @@
                 <div class="media-wrap">
                     <a href="<%= item["Link"] %>" class="pull-left">
                         <% image_url = item['Image']&.first&.thumbnails&.large&.url%>
-                        <% unless image_url.empty?
+                        <% unless image_url.empty? %>
                           <%= image_tag "#{image_url}", :alt => "img", :class => "media-object", :width => 64, :height => 64, :style => "padding-right: 20px;" %>
                         <% end %>
                     </a>
