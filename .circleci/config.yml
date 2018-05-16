@@ -1,8 +1,13 @@
 version: 2
 jobs:
   build:
+    parallelism: 2
     docker:
       - image: circleci/ruby:2.4.2-node
+        environment:
+          BUNDLE_JOBS: 2
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
     steps:
       - checkout
 
@@ -10,9 +15,10 @@ jobs:
       - restore_cache:
           key: bundle-cache-{{ checksum "Gemfile.lock" }}
 
-      - run: sudo mv /usr/local/lib/ruby/gems/2.4.0/specifications/{default/,}bundler-1.16.0.gemspec
-      - run: sudo gem uninstall bundler -a -x
-      - run: sudo gem install bundler --version 1.16
+      - run: |
+          sudo mv /usr/local/lib/ruby/gems/2.4.0/specifications/{default/,}bundler-1.16.0.gemspec
+          sudo gem uninstall bundler -a -x
+          sudo gem install bundler --version 1.16
 
       # Bundle install dependencies
       - run: bundle install
@@ -22,8 +28,6 @@ jobs:
           key: bundle-cache-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-            - /usr/local/bundle/bin
-            - /usr/local/bundle/config
 
       - run:
           name: deploy to s3
