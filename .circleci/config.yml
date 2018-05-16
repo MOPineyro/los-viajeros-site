@@ -6,18 +6,19 @@ jobs:
     steps:
       - checkout
 
-    # # Restore bundle cache
-    #   - restore_cache:
-    #       key: bundle-cache-{{ checksum "Gemfile.lock" }}
+    # Restore bundle cache
+      - restore_cache:
+          key: bundle-cache-{{ checksum "Gemfile.lock" }}
 
       # Bundle install dependencies
       - run: bundle install
 
       # Store bundle cache
-      # - save_cache:
-      #     key: bundle-cache-{{ checksum "Gemfile.lock" }}
-      #     paths:
-      #       - vendor/bundle
+      - save_cache:
+          key: bundle-cache-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+            - /usr/local/bundle/config
 
       - run:
           name: deploy to s3
