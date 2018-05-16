@@ -1,11 +1,11 @@
 version: 2
 jobs:
   build:
-    parallelism: 2
+    parallelism: 3
     docker:
       - image: circleci/ruby:2.4.2-node
         environment:
-          BUNDLE_JOBS: 2
+          BUNDLE_JOBS: 3
           BUNDLE_RETRY: 3
           BUNDLE_PATH: vendor/bundle
     steps:
@@ -19,6 +19,7 @@ jobs:
           sudo mv /usr/local/lib/ruby/gems/2.4.0/specifications/{default/,}bundler-1.16.0.gemspec
           sudo gem uninstall bundler -a -x
           sudo gem install bundler --version 1.16
+          sudo gem install middleman-cli
 
       # Bundle install dependencies
       - run: bundle install
@@ -33,5 +34,5 @@ jobs:
           name: deploy to s3
           command: |
             node index.js
-            bundle exec middleman build --clean --verbose
-            bundle exec middleman s3_sync
+            middleman build --clean --verbose
+            middleman s3_sync
