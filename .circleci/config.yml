@@ -10,10 +10,9 @@ jobs:
       - restore_cache:
           key: bundle-cache-{{ checksum "Gemfile.lock" }}
 
-      - run: |
-        sudo mv /usr/local/lib/ruby/gems/2.4.0/specifications/{default/,}bundler-1.16.0.gemspec
-        sudo gem uninstall bundler -a -x
-        sudo gem install bundler --version 1.15.4
+      - run: sudo mv /usr/local/lib/ruby/gems/2.4.0/specifications/{default/,}bundler-1.16.0.gemspec
+      - run: sudo gem uninstall bundler -a -x
+      - run: sudo gem install bundler --version 1.15.4
 
       # Bundle install dependencies
       - run: bundle install
