@@ -2,13 +2,18 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.4.1-node
+      - image: circleci/ruby:2.4.2-node
     steps:
       - checkout
 
     # Restore bundle cache
       - restore_cache:
           key: bundle-cache-{{ checksum "Gemfile.lock" }}
+
+      - run: |
+        sudo mv /usr/local/lib/ruby/gems/2.4.0/specifications/{default/,}bundler-1.16.0.gemspec
+        sudo gem uninstall bundler -a -x
+        sudo gem install bundler --version 1.15.4
 
       # Bundle install dependencies
       - run: bundle install
