@@ -1,0 +1,14 @@
+[{
+  "order": "1",
+  "location": "1000s 8th Ave, New York NY 10019",
+  "day": "Monday to Friday ",
+  "time": "11:30 am to 8:00 pm"
+}, {
+  "order": "2",
+  "day": "Saturday",
+  "time": "12:00 pm to 7:00 pm"
+}, {
+  "order": "3",
+  "day": "Sunday",
+  "time": "Closed"
+}]

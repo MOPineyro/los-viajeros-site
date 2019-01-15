@@ -4,11 +4,14 @@ var fileTaco = 'data/taco_menu.json';
 var fileBurr = 'data/burrito_menu.json';
 var fileQues = 'data/quesadilla_menu.json';
 var fileSides = 'data/side_menu.json';
-var fileSched = 'data/schedule.json';
+// var fileSched = 'data/schedule.json';
+var sFileSched = 'data/store_schedule.json';
+var tFileSched = 'data/truck_schedule.json';
 var fileNews = 'data/news.json';
 var menuJson = [];
 var menuJsonTest = [];
-var scheduleJson = [];
+var tScheduleJson = [];
+var sScheduleJson = [];
 var newsJson = [];
 
 Airtable.configure({
@@ -21,7 +24,7 @@ var base = Airtable.base('appZS57k7B6rp8Cny');
 // }).eachPage(function page(records, fetchNextPage) {
 //     // This function (`page`) will get called for each page of records.
 //     records.forEach(function(record) {
-//         menuJson.push(record._rawJson.fields);
+//         menuJson._rawJson.fields);
 //     });
 //     fetchNextPage();
 // }, function done(error) {
@@ -91,36 +94,68 @@ var base = Airtable.base('appZS57k7B6rp8Cny');
 //     console.log('Success!');
 // });
 
-base('Schedule').select({
-}).eachPage(function page(records, fetchNextPage) {
+// base('Schedule').select({
+// }).eachPage(function page(records, fetchNextPage) {
+//     // This function (`page`) will get called for each page of records.
+//     records.forEach(function(record) {
+//         scheduleJson.push(record._rawJson.fields);
+//     });
+//     fetchNextPage();
+// }, function done(error) {
+//     if (error) {
+//         console.log(error);
+//     }
+//     jsonfile.writeFile(fileSched, scheduleJson, function(err) {
+//         console.error(err)
+//     });
+//     console.log('Schedule - Success!');
+// });
+
+base('Truck Schedule').select({}).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
-    records.forEach(function(record) {
-        scheduleJson.push(record._rawJson.fields);
+    records.forEach(function (record) {
+        tScheduleJson.push(record._rawJson.fields);
     });
     fetchNextPage();
 }, function done(error) {
     if (error) {
         console.log(error);
     }
-    jsonfile.writeFile(fileSched, scheduleJson, function(err) {
+    jsonfile.writeFile(tFileSched, tScheduleJson, function (err) {
         console.error(err)
     });
-    console.log('Schedule - Success!');
+    console.log('Truck Schedule - Success!');
 });
 
-base('News').select({
-}).eachPage(function page(records, fetchNextPage) {
+base('Store Schedule').select({}).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
-    records.forEach(function(record) {
-        newsJson.push(record._rawJson.fields);
+    records.forEach(function (record) {
+        sScheduleJson.push(record._rawJson.fields);
     });
     fetchNextPage();
 }, function done(error) {
     if (error) {
         console.log(error);
     }
-    jsonfile.writeFile(fileNews, newsJson, function(err) {
+    jsonfile.writeFile(sFileSched, sScheduleJson, function (err) {
         console.error(err)
     });
-    console.log('News - Success!');
+    console.log('Store Schedule - Success!');
 });
+
+// base('News').select({
+// }).eachPage(function page(records, fetchNextPage) {
+//     // This function (`page`) will get called for each page of records.
+//     records.forEach(function(record) {
+//         newsJson.push(record._rawJson.fields);
+//     });
+//     fetchNextPage();
+// }, function done(error) {
+//     if (error) {
+//         console.log(error);
+//     }
+//     jsonfile.writeFile(fileNews, newsJson, function(err) {
+//         console.error(err)
+//     });
+//     console.log('News - Success!');
+// });

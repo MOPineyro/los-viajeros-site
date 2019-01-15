@@ -1,0 +1,29 @@
+[{
+  "time": "11:30 am to 2:30 pm",
+  "order": "3",
+  "location": "Jacobi Medical Center, Bronx NY, 1400 Pelham Pkwy",
+  "day": "Wednesday"
+}, {
+  "order": "1",
+  "location": "Closed till further notice",
+  "day": "Monday"
+}, {
+  "order": "6",
+  "location": "Available for catering and events",
+  "day": "Saturday and Sunday"
+}, {
+  "time": "11:30 am to 2:30 pm",
+  "order": "4",
+  "location": "DUMBO Lot Brooklyn, 56 Jay St",
+  "day": "Thursday"
+}, {
+  "time": "11:30 am to 2:30 pm",
+  "order": "2",
+  "location": "The Factory 30-30 47th Ave. LIC Queens",
+  "day": "Tuesday"
+}, {
+  "time": "11:30 am to 2:30 pm",
+  "order": "5",
+  "location": "Alexandria Center 29th st & 1st Ave NYC",
+  "day": "Friday"
+}]
