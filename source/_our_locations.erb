@@ -7,41 +7,13 @@
                     <div class="title-section style1 martp-0px">
                         <h1 class="title marbt-33px" >Our Locations</h1>
                     </div>
-                    
+
                     <ul class="menu-tab">
-                        <li class="active"><a href="#">Turnstyle Market   </a></li>
-                        <li><a href="#">Food Truck   </a></li>
+                        <li><a href="active">Food Truck</a></li>
                     </ul>
-                    
+
                     </div><!--/.bg-tabs-->
                 <div class="content-tab">
-                <div class="content-inner">
-                        <div class="col-md-12">
-                            <div class="col-md-6 col-sm-12">
-                                <%= image_tag "store_pic2.png", :alt => "", :class => "img-responsive", :width => 530, :height => 310 %>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                                <table class="table table-bordered">
-                                    <tr>
-                                        <th>Day</th>
-                                        <th>Time</th>
-                                        <th>Location</th>
-                                    </tr>
-                                    <% sorted_data = data.store_schedule.sort_by { |h| h['order'].to_i } %>
-                                    <% sorted_data.each do |day| %>
-                                        <tr>
-                                            <td><%= day["day"] %></td>
-                                            <td><%= day["time"] %></td>
-                                            <td><%= day["location"] %></td>
-                                        </tr>
-                                    <% end %>
-                                </table>
-                            </div>
-                            <div class="read-more view-all">
-                                <a href="https://squareup.com/store/losviajerosnyc" class="order-online-select" data-mfp-src="#store-select">Order Online</a>
-                            </div>
-                        </div><!-- /.col-md-12" -->
-                </div><!-- /.content-inner -->  
                 <div class="content-inner">
                         <div class="col-md-12">
                             <div class="col-md-6 col-sm-12">
@@ -68,11 +40,11 @@
                                 <a href="https://squareup.com/store/los-viajeros-food-trucks/" class="order-online-select" data-mfp-src="#store-select">Order Online</a>
                             </div>
                         </div><!-- /.col-md-12" -->
-                </div><!-- /.content-inner -->      
+                </div><!-- /.content-inner -->
             </div><!-- /.content-tab -->
         </div><!--flat-tabs-->
         <div class="clearfix"></div>
-        <div class="flat-divider d35px"></div>                   
+        <div class="flat-divider d35px"></div>
         </div><!--row-->
     </div><!--container -->
 </section>
