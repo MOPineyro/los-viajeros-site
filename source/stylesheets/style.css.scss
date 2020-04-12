@@ -42,14 +42,15 @@
 
 $color_pink: #ff0080;
 $color_purple: rgb(112,
-0,
-146);
+  0,
+  146);
 $color_green: rgb(167,
-255,
-24);
+  255,
+  24);
 $color_orange: rgb(255,
-120,
-0);
+  120,
+  0);
+
 .logo {
   width: 12%;
   height: 12%;
@@ -476,6 +477,22 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+  border: 2px solid $color_pink;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 14.5px 30px;
+  background-color: $color_pink;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  letter-spacing: 0.6px;
+}
+
+a.contact-btn {
   border: 2px solid $color_pink;
   font-size: 12px;
   font-weight: 700;
@@ -2354,8 +2371,10 @@ p.entry-content {
 }
 
 $color_1: $color_pink;
+
 .pagination {
   margin: 0;
+
   &:a {
     .pagination {
       &:span {
@@ -2363,12 +2382,15 @@ $color_1: $color_pink;
       }
     }
   }
+
   &:i {
     font-size: 12px;
   }
+
   .paging-next {
     float: right;
   }
+
   a {
     &:hover {
       color: $color_1;
@@ -2382,6 +2404,7 @@ $color_1: $color_pink;
       margin-right: -2px;
       padding-left: 3px;
     }
+
     width: 100%;
     letter-spacing: 0.3px;
   }
