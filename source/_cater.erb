@@ -8,69 +8,37 @@
                 </div>
             </div><!--col-md-5-->
 
-            <div class="col-md-7 submit-form">
-                <div class="flat-divider d10px hidden-lg"></div>
-                <div class="reservation-page-left">
-                    <div class="reservation-page-form"> 
-                        <div class="title-section">
-                            <h1 class="title">We Cater</h1>
-                        </div>
-                        <h4 style="text-align: center;">We're happy to cater your next shindig.<br>Fill out the form below and we'll be in touch.</h4> 
-                        <form id="reservation-form" action="https://wt-manuel_o_pineyro-gmail_com-0.run.webtask.io/losviajeros-contact" "method"="post">                      
-                            <div class="reservation-page-input-box">
-                                <label>Your name</label>
-                                <input type="text" class="form-control" placeholder="Full name" name="from_name" id="form-name" data-error="Subject field is required" required="">
-                            </div>
-                            <div class="reservation-page-input-box">
-                                <label>Time</label>
-                                <span class="fa fa-calendar date_picker" aria-hidden="true">
-                                    <input type="text" placeholder="03/09/2017" name="cater_date" id="date-picker" data-error="Field is required" required="">
-                                </span>
-                                <span class="fa fa-clock-o time_picker" aria-hidden="true">
-                                    <input type="text" placeholder="06:00" name="time" id="time-picker">
-                                </span>
-                            </div>
-                            <div class="reservation-page-input-box">
-                                <label>Phone number</label>
-                                <input type="text" class="form-control" placeholder="Your phone" name="contact_num" id="form-phone" data-error="Subject field is required" required="">
-                            </div>
-                            <div class="reservation-page-input-box">
-                                <label>Details</label>
-                                <input type="text" class="form-control" placeholder="# of people/Location/etc." name="num_ppl" id="form-phone" data-error="field is required" required="">
-                            </div>
-                            <div class="reservation-booking">
-                                <button type="submit" class="book-now-btn">Send Request</button>
-                            </div>
-                        </form>                           
-                    </div>
-                        
+            <div class="col-md-7 text-center">
+                <div class="title-section" style="padding-bottom: 20px;">
+                    <h1 class="title">We Cater</h1>
+                    <h4>We're happy to cater your next shindig.<br><br>
+                    Los Viajeros specializes in Latin fusion tacos & burritos made with fresh all natural ingredients. <br><br>
+                    Contact us below and we'll be in touch.</h4> 
+                    <br><br>
+                    <a class="contact-btn" href="mailto:los.viajeros15@gmail.com?Subject=Let's Taco 'bout It" target="_blank">los.viajeros15@gmail.com</a> 
+                    <br><br>
                 </div>
-            </div><!--col-md-7-->
-        </div><!--row-->
+                <h2>Some of Our Clients</h2>
+                <div class="row">
+                    <div class="col-xs-6 col-md-2 col-md-offset-1">
+                    <%= image_tag 'clients/1.png', :class => "img-responsive", :alt => 'clients' %>
+                    </div>
+                    <div class="col-xs-6 col-md-2">
+                    <%= image_tag 'clients/2.png', :class => "img-responsive", :alt => 'clients' %>
+                    </div>
 
-        <div class="row">
-            <div class="col-md-12">
-                <br>
-                <h2 style="text-align: center;">Some of Our Clients</h2>
+                    <div class="col-xs-6 col-md-2">
+                    <%= image_tag 'clients/3.png', :class => "img-responsive", :alt => 'clients' %>
+                    </div>
+                    <div class="col-xs-6 col-md-2">
+                    <%= image_tag 'clients/4.png', :class => "img-responsive", :alt => 'clients' %>
+                    </div>
+                    <div class="col-xs-6 col-md-2">
+                    <%= image_tag 'clients/5.png', :class => "img-responsive", :alt => 'clients' %>
+                    </div>
+                    <br>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 col-md-2 col-md-offset-1">
-               <%= image_tag 'clients/1.png', :class => "img-responsive", :alt => 'clients' %>
-             </div>
-             <div class="col-xs-6 col-md-2">
-               <%= image_tag 'clients/2.png', :class => "img-responsive", :alt => 'clients' %>
-             </div>
-
-             <div class="col-xs-6 col-md-2">
-               <%= image_tag 'clients/3.png', :class => "img-responsive", :alt => 'clients' %>
-             </div>
-             <div class="col-xs-6 col-md-2">
-               <%= image_tag 'clients/4.png', :class => "img-responsive", :alt => 'clients' %>
-             </div>
-             <div class="col-xs-6 col-md-2">
-               <%= image_tag 'clients/5.png', :class => "img-responsive", :alt => 'clients' %>
-             </div>
-        </div>
+        </div><!--row-->
     </div><!--container -->
 </section>
