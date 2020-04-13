@@ -26,7 +26,7 @@
                                         <th>Time</th>
                                         <th>Location</th>
                                     </tr>
-                                    <% sorted_data = data.store_schedule.sort_by { |h| h['order'].to_i } %>
+                                    <% sorted_data = data.truck_schedule.sort_by { |h| h['order'].to_i } %>
                                     <% sorted_data.each do |day| %>
                                         <tr>
                                             <td><%= day["day"] %></td>
